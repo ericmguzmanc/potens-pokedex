@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.navbar {
+  margin: 10px 0px 10px 0px;
+}
+
+.bordered-container{
+  border: 1 px solid lightgray;
+}

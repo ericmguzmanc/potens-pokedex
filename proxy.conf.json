@@ -1,0 +1,18 @@
+{
+  "/pokeapi": {
+    "target": "http://pokeapi.co/api/v2",
+    "secure": false,
+    "pathRewrite": {
+      "^/pokeapi": ""
+    },
+    "changeOrigin": true
+  },
+  "/spriteapi": {
+    "target": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork",
+    "secure": false,
+    "pathRewrite": {
+      "^/spriteapi": ""
+    },
+    "changeOrigin": true
+  }
+}
