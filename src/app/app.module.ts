@@ -15,16 +15,17 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { PokemonComponent } from './pokemon/pokemon.component';
 import { PokemonItemsComponent } from './pokemon-items/pokemon-items.component';
 import { PokemonBerriesComponent } from './pokemon-berries/pokemon-berries.component';
 import { UserComponent } from './user/user.component';
 import { PokemonService } from './shared/services/pokemon.service';
+import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+import { PokemonEntryComponent } from './pokemon-list/pokemon-entry/pokemon-entry.component';
 
 
 const routes: Routes = [
   {path: '', redirectTo: 'pokemon', pathMatch: 'full'},
-  {path: 'pokemon', component: PokemonComponent},
+  {path: 'pokemon', component: PokemonListComponent},
   {path: 'berries', component: PokemonBerriesComponent},
   {path: 'items', component: PokemonItemsComponent},
   {path: 'user', component: UserComponent},
@@ -34,10 +35,11 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     NavBarComponent,
-    PokemonComponent,
     PokemonBerriesComponent,
     PokemonItemsComponent,
-    UserComponent
+    UserComponent,
+    PokemonListComponent,
+    PokemonEntryComponent,
   ],
   imports: [
     BrowserModule,
