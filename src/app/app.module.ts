@@ -21,6 +21,7 @@ import { UserComponent } from './user/user.component';
 import { PokemonService } from './shared/services/pokemon.service';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonEntryComponent } from './pokemon-list/pokemon-entry/pokemon-entry.component';
+import { PaginationComponent } from './shared/pagination/pagination.component';
 
 
 const routes: Routes = [
@@ -40,6 +41,7 @@ const routes: Routes = [
     UserComponent,
     PokemonListComponent,
     PokemonEntryComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,7 @@ export class PokemonListComponent implements OnInit {
   pokemons: PokemonEntry[];
   count: number  = 0;
   offset: number = 0;
-  limit:  number = 10; 
+  limit:  number = 20; 
 
   constructor(private pokemonService: PokemonService) { }
 
@@ -24,12 +24,16 @@ export class PokemonListComponent implements OnInit {
       .subscribe( (pokemons) => {
         this.pokemons = pokemons.pokemons;
         this.count = pokemons.count
-        console.log(pokemons);
       });
   }
 
   findOne(): void {
     this.pokemonService.findOne(1)
       .subscribe(pokemon => console.log('pokemon ', pokemon));
+  }
+
+  onPageChange(offset): void {
+    this.offset = offset;
+    this.findAll(offset, this.limit);
   }
 }
