@@ -1,0 +1,16 @@
+<div class="container">
+  <div style="float:left">
+    <app-pokemon-entry [pokemon]="pokemon?.baseInfo" [withLink]="false"></app-pokemon-entry>
+  </div>
+  <div style="float:left">
+    <div class="container">
+      <div class="row">
+        <app-pokemon-ability-info [info]="pokemon?.abilityInfo"></app-pokemon-ability-info>
+      </div>
+      <div class="row">
+        <app-pokemon-description [descriptions]="pokemon?.descriptions"></app-pokemon-description>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="" style="clear: both;"></div>

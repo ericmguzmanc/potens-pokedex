@@ -22,11 +22,17 @@ import { PokemonService } from './shared/services/pokemon.service';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonEntryComponent } from './pokemon-list/pokemon-entry/pokemon-entry.component';
 import { PaginationComponent } from './shared/pagination/pagination.component';
+import { PokemonInfoComponent } from './pokemon-info/pokemon-info.component';
+import { PokemonAbilityInfoComponent } from './pokemon-info/pokemon-ability-info/pokemon-ability-info.component';
+import { FeetPipe } from './shared/metrics/feet.pipe';
+import { PoundPipe } from './shared/metrics/pound.pipe';
+import { PokemonDescriptionComponent } from './pokemon-info/pokemon-description/pokemon-description.component';
 
 
 const routes: Routes = [
   {path: '', redirectTo: 'pokemon', pathMatch: 'full'},
   {path: 'pokemon', component: PokemonListComponent},
+  {path: 'pokemon/:id', component: PokemonInfoComponent},
   {path: 'berries', component: PokemonBerriesComponent},
   {path: 'items', component: PokemonItemsComponent},
   {path: 'user', component: UserComponent},
@@ -42,6 +48,11 @@ const routes: Routes = [
     PokemonListComponent,
     PokemonEntryComponent,
     PaginationComponent,
+    PokemonInfoComponent,
+    PokemonAbilityInfoComponent,
+    FeetPipe,
+    PoundPipe,
+    PokemonDescriptionComponent,
   ],
   imports: [
     BrowserModule,

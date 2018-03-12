@@ -8,6 +8,7 @@ import { PokemonEntry } from '../../shared/models/pokemon-entry.model';
 export class PokemonEntryComponent implements OnInit {
 
   @Input() pokemon: PokemonEntry = null;
+  @Input() withLink: boolean = true;
 
   constructor() { }
 

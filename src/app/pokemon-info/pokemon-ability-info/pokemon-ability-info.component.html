@@ -1,0 +1,41 @@
+
+<div class="card bg-secondary text-white" style="width: 36rem; margin:5px;" *ngIf="info">
+ <div class="card-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="row">
+            <h6>Height</h6>
+          </div>
+          <div class="row">
+            <span class="">{{ info?.height | feet:'dm'}}</span>
+          </div>
+          <br>
+          <div class="row">
+            <h6>Weight</h6>
+          </div>
+          <div class="row">
+            <span>{{ info?.weight | pound:'hg':1}}</span>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="row">
+            <h6>Category</h6>
+          </div>
+          <div class="row">
+            <span>{{ info?.category }}</span>
+          </div>
+          <br>
+          <div class="row">
+            <h6>Abilities</h6>
+          </div>
+          <div class="row">
+            <ul>
+              <li *ngFor="let ability of info?.abilities">{{ ability?.name }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
