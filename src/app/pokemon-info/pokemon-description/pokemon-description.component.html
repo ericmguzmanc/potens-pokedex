@@ -1,5 +1,19 @@
-<div class="card bg-light text-dark" style="width: 36rem; margin:5px;">
-  <div class="card-body">
-    hola
+<div class="card bg-light text-dark" style="width: 36rem; margin:5px;" *ngIf="descriptions" >
+  <div class="card-body" [@cardState]="description?.version">
+    <p [@descriptionState]="description" *ngIf="description != null">
+      {{ description?.description }}
+    </p>
+  </div>
+  <div class="card-footer" [@cardState]="description?.version">
+    <form>
+      <div class="form-group" style="margin: 5px;">
+        <select class="form-control" name="gameVersion" [(ngModel)]="description" [@cardState]="description?.version">
+          <option *ngFor="let description of descriptions" [ngValue]="description">
+            {{ description.version }}
+          </option>
+        </select>
+      </div>
+    </form>
   </div>
 </div>
+

@@ -1,8 +1,11 @@
 <div class="text-center" >
+  <div style="margin:6rem;" *ngIf="loading">
+    <app-loader [loading]="loading"></app-loader>
+  </div>
   <div style="display: inline-block;" *ngFor="let pokemon of pokemons">
     <app-pokemon-entry [pokemon] = pokemon></app-pokemon-entry>
   </div>
 </div>
-<div *ngIf="pokemons">
+<div>
   <app-pagination [offset]="offset" [limit]="limit" [size]="count" (pageChange)="onPageChange($event)"></app-pagination>
 </div>

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
@@ -27,6 +28,7 @@ import { PokemonAbilityInfoComponent } from './pokemon-info/pokemon-ability-info
 import { FeetPipe } from './shared/metrics/feet.pipe';
 import { PoundPipe } from './shared/metrics/pound.pipe';
 import { PokemonDescriptionComponent } from './pokemon-info/pokemon-description/pokemon-description.component';
+import { LoaderComponent } from './shared/loader/loader.component';
 
 
 const routes: Routes = [
@@ -53,11 +55,14 @@ const routes: Routes = [
     FeetPipe,
     PoundPipe,
     PokemonDescriptionComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [

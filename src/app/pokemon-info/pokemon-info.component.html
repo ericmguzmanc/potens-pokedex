@@ -1,4 +1,7 @@
 <div class="container">
+  <div class="text-center" style="margin: 5rem;" *ngIf="loading">
+    <app-loader [loading]="loading"></app-loader>
+  </div>
   <div style="float:left">
     <app-pokemon-entry [pokemon]="pokemon?.baseInfo" [withLink]="false"></app-pokemon-entry>
   </div>

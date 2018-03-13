@@ -12,15 +12,20 @@ import 'rxjs/add/operator/mergeMap';
 })
 export class PokemonInfoComponent implements OnInit {
 
+  loading: boolean = false;
   pokemon: Pokemon;
 
   constructor(private _route: ActivatedRoute, private _service: PokemonService) { }
 
   ngOnInit() {
+    this.loading = true;
     this._route.params
       .map(params => params['id'])
       .flatMap(id => this._service.findOne(id))
-      .subscribe(pokemon => this.pokemon = pokemon);
+      .subscribe((pokemon) => {
+        this.pokemon = pokemon;
+        this.loading = false;
+      }, () => this.loading = false);
   }
 
 }
